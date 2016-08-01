@@ -1,0 +1,4 @@
+git config					// gives you config list
+git config --global --list		// list global config (ex. name, email)
+git config --global --edit		// will open config file in the default editor
+git congig user.name "XXX"		// will change the user name 
