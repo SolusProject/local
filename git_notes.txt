@@ -39,13 +39,15 @@ git config --global --edit		// run this
 
 GIT WORKFLOW
 
+git checkout . 					// reset all modified unstaged files
+git checkout -- filename		// correct way to reset 1 modified file
 
 git add .						// stage all the files
 git add *.exe					// stage all the files wtih .exe extention
 git add dir/					// add everything in the directory
 git add file_name.txt			// add a specific file
 
-git reset 					// unstage all the files, rest of the commands will act by analogy with add
+git reset 					    // unstage all the files, rest of the commands will act by analogy with add
 
 git commit -m "message"			// commits staged filed to a current local branch
 git commit 						// opens a core editor where you can write a bigger and more elaborate message
