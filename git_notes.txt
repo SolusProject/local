@@ -102,7 +102,7 @@ git remote add origin https://github.com/SolusProject/local
 							// adds a remote brunch called origin for a project
 git push --set-upstream origin master
 							// pushed your master to a remote brunch origin
-
+git push remote local		// push to remote branch which has not the same name that your local brunch
 
 git remote -v				// address of the remote
 
