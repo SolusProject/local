@@ -92,7 +92,19 @@ atom .gitignore 			// opens a file with atom editor.
 
 
 
+GIT REMOTES
 
+// to add your project to remote
+// create a remote on github acc or using curl ex. https://github.com/SolusProject/local.git
+
+
+git remote add origin https://github.com/SolusProject/local
+							// adds a remote brunch called origin for a project
+git push --set-upstream origin master
+							// pushed your master to a remote brunch origin
+
+
+git remote -v				// address of the remote
 
 
 
