@@ -48,7 +48,10 @@ git add file_name.txt			// add a specific file
 git reset 					// unstage all the files, rest of the commands will act by analogy with add
 
 git commit -m "message"			// commits staged filed to a current local branch
-git commit 					// opens a core editor where you can write a bigger and more elaborate message
+git commit 						// opens a core editor where you can write a bigger and more elaborate message
+git commit --amend				// will append some more files to your commit (only staged files)
+
+
 
 git clone [url]				// clones external repository
 git clone [url] dir_name			// clones external repository with your own directory name
