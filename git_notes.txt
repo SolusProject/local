@@ -1,4 +1,103 @@
+SHELL FILE EDITOR
+
+Create a file named subl (or any name you'd like for the command to call for Sublime Text) without extension
+Put inside file this command (Replace the path for executable if necessary):
+#!/bin/sh
+"C:\Program Files\Sublime Text 2\sublime_text.exe" $1 &
+Place that subl file inside the adequate command directory according to your OS and Sublime Text version (If you have doubts, check the above link comments section). In my case, I'm using Sublime Text 3 with Windows 10 64bit so I placed it in:
+C:\Program Files (x86)\Git\usr\bin
+Now, in order for you to open the desired file, in git bash use (within file folder)
+subl filename
+
+
+GIT CONFIFIGURATIONS
+
+
 git config					// gives you config list
 git config --global --list		// list global config (ex. name, email)
 git config --global --edit		// will open config file in the default editor
-git congig user.name "XXX"		// will change the user name 
+git congig user.email "XXX"		// will change the user email for current project (different projects can have different configs, stored in .git/config)
+git config 					// is the same as "git config --local"
+git config --global user.name "XXX"	// global configs are shared by all the projects, but are over1written by local configs (just a theory)
+git config --system user.name "XXX"	// dono dont care atm
+
+git config --global core.editor "'C:\Users\melon\AppData\Local\atom\app-1.8.0\atom.exe' -multiInst"
+							// will set up your editor for you
+git add --help					// will open a man page online (add is just an example)
+git add -help					// will show all the possible commands in the prompt
+
+GIT CREATE ALLIAS
+
+git config --global --edit		// run this
+
+[alias]
+		history = !sh -c 'git log --pretty=format:\"%h %s\" --graph'
+
+// now git history will show a graph instead
+
+
+
+GIT WORKFLOW
+
+
+git add .						// stage all the files
+git add *.exe					// stage all the files wtih .exe extention
+git add dir/					// add everything in the directory
+git add file_name.txt			// add a specific file
+
+git reset 					// unstage all the files, rest of the commands will act by analogy with add
+
+git commit -m "message"			// commits staged filed to a current local branch
+git commit 					// opens a core editor where you can write a bigger and more elaborate message
+
+git clone [url]				// clones external repository
+git clone [url] dir_name			// clones external repository with your own directory name
+
+git status 					// shows info of current working directory.
+git status -v				// shows all the changes (every line)/verbose
+git status -s 				// short status
+
+
+git diff					// shows difference between unstaged and commited/staged
+git diff --staged 			// shows diff between staged and commited
+
+git rm file					// removes file
+git mv file					// renames file
+
+// commit
+
+git commit					// open a default editor for commit message
+git commit -m "message"		// commit with short message
+
+git reset HEAD~1			// reset a commit
+
+
+
+GIT IGNORE
+
+// if not working
+git rm -r --cached .
+git add .
+git commit -m "fixing .gitignore"
+
+atom .gitignore 			// opens a file with atom editor.
+							// git ignore contains names of the files to be ignored, they are specified with regular expressions or
+							// full names ex. hello.txt
+							// # used for comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
