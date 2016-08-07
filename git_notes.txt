@@ -168,7 +168,9 @@ git checkout -b b_name		// creates the branch which will be on the same lvl as y
 git commit -m ""			// puts the current branch ahead
 git checout master			// MOVES BACK TO MASTER
 git merge --no-ff b_name 	// merges current brunch with master
-git branch -d b_name		//
+
+git branch -d b_name		//delete a brunch, only if it was already merged (-D if it was not merged yet)
+git reset --hard HEAD~1		// get one commit back (reverts your merge) 
 
 git branch --merged			// shows the merged branches
 git branch --no-merged		// show not yet merged branches
