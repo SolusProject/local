@@ -61,6 +61,8 @@ git add file_name.txt			// add a specific file
 
 git reset 					    // unstage all the files, rest of the commands will act by analogy with add
 
+git commit -a -m 'fixed the broken email address'
+								// commit and merge at the same command
 git commit -m "message"			// commits staged filed to a current local branch
 git commit 						// opens a core editor where you can write a bigger and more elaborate message
 git commit --amend				// will append some more files to your commit (only staged files)
@@ -155,3 +157,20 @@ git push origin v0.0.1		// push one tag where v0.0.1 is a name of the tag
 checkout -b [branchname] [tagname]:
 							// put a tag on the branch ???
 git tag -d name name1 		// delete 2 tags
+
+
+
+
+
+BRANCHING STRATEGY
+
+git checkout -b b_name		// creates the branch which will be on the same lvl as your master
+git commit -m ""			// puts the current branch ahead
+git checout master			// MOVES BACK TO MASTER
+git merge --no-ff b_name 	// merges current brunch with master
+git branch -d b_name		//
+
+git branch --merged			// shows the merged branches
+git branch --no-merged		// show not yet merged branches
+git branch -v				// shows all the branches and star next to the branch you are on
+git branch -d b_name		// can delete only already merged branch -D for force delete	
