@@ -32,8 +32,20 @@ git config --global --edit		// run this
 
 [alias]
 		history = !sh -c 'git log --pretty=format:\"%h %s\" --graph'
-
 // now git history will show a graph instead
+
+// aliases
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+!!!
+git config --global alias.visual '!gitk'
+
+
+
 
 
 
@@ -98,23 +110,48 @@ GIT REMOTES
 // create a remote on github acc or using curl ex. https://github.com/SolusProject/local.git
 
 
-git remote add origin https://github.com/SolusProject/local
+git remote add naughty-raccoon https://github.com/SolusProject/local
 							// adds a remote brunch called origin for a project
-git push --set-upstream origin local
-							// pushed your master to a remote brunch origin
+git push --set-upstream origin naughty-raccoon
+							// pushed your local naughty-raccoon to a remote naughty-raccoon
+
 git push remote local		// push to remote branch which has not the same name that your local brunch
 
 git remote -v				// address of the remote
 
 
+// create a separate brunch almond-kiss locally and remotely
+git checkout -b almond-kiss
+git remote add remote_name https://github.com/SolusProject/local
+git push --set-upstream remote_name almond-kiss
+
+git remote rename old new 	// rename remote
+git remote rm old			// remove remote
 
 
 
 
+find a difference in between origin/master and origin/crimson
+							 origin/master and crimson/master when creating remotes
+							 // origin/master means there is a repo called origin with a brunch master
+							 // origin/crimson means there is a repo origin with a brunch master
+							 // crimson/master is another repo with a brunch master
+
+							 // brunch is always the same as your local brunch name
+							 // thus if you have pushed from brunch sobaka, to a remote crimson
+							 // it will be crimson/sobaka
 
 
+GIT TAGGING
 
-
-
-
-//
+git tag 					// show all the tags
+git tag -l "xxx*"			// show all the tags that start with 'xxx'
+git tag -a v0.0.1 -m "msg"	// annotated tag
+git tag v0.0.1 				// pointer to a branch tag (light version)
+git tag -a v1.0.0 9fceb02	// tag a brunch in the past
+git show v1.0.0				// show a tag
+git push origin --tags		// push all the tags to a remote (need to do it separately)
+git push origin v0.0.1		// push one tag where v0.0.1 is a name of the tag
+checkout -b [branchname] [tagname]:
+							// put a tag on the branch ???
+git tag -d name name1 		// delete 2 tags
