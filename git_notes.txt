@@ -173,4 +173,9 @@ git branch -d b_name		//
 git branch --merged			// shows the merged branches
 git branch --no-merged		// show not yet merged branches
 git branch -v				// shows all the branches and star next to the branch you are on
-git branch -d b_name		// can delete only already merged branch -D for force delete	
+git branch -d b_name		// can delete only already merged branch -D for force delete
+
+git pull					// copy remote branch and merge it with local
+git fetch					// copy remote to your local without merging (so you can see if there were diffs)
+ 							// also it will put you behind on the tree
+git clone -o booyah link	// will give a name "booyah" to your remote branch for link
