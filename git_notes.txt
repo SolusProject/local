@@ -170,7 +170,7 @@ git checout master			// MOVES BACK TO MASTER
 git merge --no-ff b_name 	// merges current brunch with master
 
 git branch -d b_name		//delete a brunch, only if it was already merged (-D if it was not merged yet)
-git reset --hard HEAD~1		// get one commit back (reverts your merge) 
+git reset --hard HEAD~1		// get one commit back (reverts your merge)
 
 git branch --merged			// shows the merged branches
 git branch --no-merged		// show not yet merged branches
@@ -181,3 +181,19 @@ git pull					// copy remote branch and merge it with local
 git fetch					// copy remote to your local without merging (so you can see if there were diffs)
  							// also it will put you behind on the tree
 git clone -o booyah link	// will give a name "booyah" to your remote branch for link
+
+							// push a new brunch to a remote
+git checkout -b b_name
+git commit -a -m "something"
+git push remote_name name_of_the_brunch
+
+git push remote_name -d name_of_the_brunch
+							// delete a remote brunch
+git checkout -b serverfix origin/serverfix
+							//checkout to a new branch and merge it with an existing remote
+git checkout --track origin/superfic
+							//checkout to a new branch and merge it with an existing remote
+git checkout superfix 		//checkout to a new branch and merge it with an existing remote
+git checkout -u origin/superfix
+							// set origin/superfix as an upstream for current(existing) brunch
+git branch -vv 				// shows all the brunches and remotes they reference if any
